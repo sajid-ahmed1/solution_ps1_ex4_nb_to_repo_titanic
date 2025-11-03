@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
-
+from pathlib import Path
+from IPython.display import Image, display
 
 def missing_data_table_analysis(data):
     """
@@ -185,3 +186,10 @@ def feat_sex_numeric(dataset):
         print(mapped_sex.isna().sum(), "NaN values")
     dataset["Sex"] = mapped_sex.astype(int)
     return dataset
+
+
+def image_loader(image_name: str) -> None:
+    '''
+    Loads image into notebook
+    '''
+    return display(Image(f'figures/{image_name}'))
